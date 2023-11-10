@@ -1,0 +1,24 @@
+{% include 'includes/header.twig' %}
+{% include 'includes/navbar.twig' %}
+<div class="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <h1 class="text-4xl font-extrabold mb-8 col-span-full">Latest News</h1>
+    {% for news in headlinesCollection.getNews() %}
+        <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
+            {% if news.getUrlToImage() %}
+                <div class="h-48 overflow-hidden">
+                    <img src="{{ news.getUrlToImage() }}" alt="Image not available"
+                         class="w-full h-full object-cover rounded-t-lg">
+                </div>
+            {% endif %}
+            <a href="{{ news.getUrl() }}" target="_blank">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-2">{{ news.getTitle() }}</h2>
+                    <p class="text-gray-700">{{ news.getDescription() }}</p>
+                    <p class="text-gray-500 mt-2">Published on {{ news.getPublishedAt() | date('F j, Y') }}</p>
+                    <p class="mt-4 text-gray-800">{{ news.getContent() }}</p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% include 'includes/footer.twig' %}

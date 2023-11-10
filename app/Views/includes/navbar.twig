@@ -1,0 +1,40 @@
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center border-none">
+        <h1 class="text-white font-extrabold text-xl mb-2 md:mb-0"><a href="http://localhost:8000"> News site</a></h1>
+        <div class="flex space-x-4">
+            <button onclick="location.href='/country?country=us'" class="flex items-center focus:outline-none">
+                <span class="flag-icon flag-icon-us mr-2"></span>
+            </button>
+            <button onclick="location.href='/country?country=de'" class="flex items-center focus:outline-none">
+                <span class="flag-icon flag-icon-de mr-2"></span>
+            </button>
+            <button onclick="location.href='/country?country=no'" class="flex items-center focus:outline-none">
+                <span class="flag-icon flag-icon-no mr-2"></span>
+            </button>
+        </div>
+        <form action="/search" method="get" class="flex space-x-4 items-center border-none">
+            <input type="text" name="question"
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   placeholder="Search articles">
+            <div class="relative max-w-sm">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-calendar-days" style="color: #a0a2a7;"></i>
+                </div>
+                <input datepicker name="from" type="text"
+                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                       placeholder="From">
+            </div>
+            <div class="relative max-w-sm">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-calendar-days" style="color: #a0a2a7;"></i>
+                </div>
+                <input datepicker name="to" type="text"
+                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                       placeholder="To">
+            </div>
+            <button type="submit"
+                    class="bg-blue-700 text-white py-2 px-4 rounded focus:outline-none hover:bg-blue-800">Search
+            </button>
+        </form>
+    </div>
+</nav>
